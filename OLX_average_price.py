@@ -67,7 +67,9 @@ def show_stats(prices):
     print(f"Середня ціна: {avg_price} грн")
     return avg_price, min_price, max_price
 
-def save_results(directory, filename, prices, links):
+def save_results(subdir, filename, prices, links):
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    directory = os.path.join(script_dir, subdir)
     os.makedirs(directory, exist_ok=True)
     path = os.path.join(directory, filename)
     with open(path, "w", encoding="utf-8") as f:
