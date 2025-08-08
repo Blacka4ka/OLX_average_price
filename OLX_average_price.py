@@ -113,6 +113,7 @@ def main():
     combined = list(zip(prices, links))
     if len(combined) > 20:
         combined = random.sample(combined, 20)
+    combined.sort(key=lambda x: x[0])  # Сортуємо випадкові результати за ціною
     sel_prices = [p for p, _ in combined]
     sel_links = [l for _, l in combined]
 
@@ -132,6 +133,7 @@ def main():
             combined_f = list(zip(prices_f, links_f))
             if len(combined_f) > 20:
                 combined_f = random.sample(combined_f, 20)
+            combined_f.sort(key=lambda x: x[0])  # Сортуємо фільтровані результати за ціною
             sel_prices_f = [p for p, _ in combined_f]
             sel_links_f = [l for _, l in combined_f]
 
